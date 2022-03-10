@@ -17,10 +17,10 @@
         <%= form.label "uploaded_image", class: "form-label" %>
         <%= form.file_field "uploaded_image", accept:"image/jpg, image/jpeg, image/png", class: "form-control" %>
       </div>
-      <div>
-      <%= form.submit %>
-      </div>
       <%= form.hidden_field "place_id" %>
+      <div>
+      <%= form.submit "Create Post", class: "btn btn-primary" %>
+      </div>      
       <% end %>
   <% else %>
     You must first <a href="/sessions/new">login</a> to post.
