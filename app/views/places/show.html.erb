@@ -1,13 +1,18 @@
 <h1><%= @place.name %></h1>
-<br><br>
-<h2>My Posts</h2>
+<div class ="mt-4">
+</div>
 
-<div class="row">
+<% if @current_user %>
+  <p>
+    <button type="button" class="btn btn-primary"><b><a href="/posts/new?place_id=<%= @place.id %>" class="link-light">New Post</a></button>
+  </p>
+
+<div class="mt-3">
+<div class = "container-fluid">
+  <div class ="row">
   <% for post in @place.posts %>
-    <div class="col-md-3 col-sm-6">
-      
-      <% if post.user_id = @current_user %>
-
+    <% if post.user_id = @current_user %>
+      <div class="col-md-3 col-sm-6">  
         <h3><%= post.title %></h3>
         <h4><%= post.posted_on %></h4>
           <% if post.uploaded_image.attached? %>
@@ -19,15 +24,8 @@
       <% end %>     
     </div>
   <% end %>
-</div>
+  </div>
+  </div>
+  </div>
+<% end %>
 
-
-
-
-<p>
-  <a href="/posts/new?place_id=<%= @place.id %>">New Post</a>
-</p>
-
-<p>
-  <a href="/places">Back to All Places</a>
-</p>
