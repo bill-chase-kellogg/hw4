@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
         redirect_to "/sessions/new"
       end
     else
-      flash[:notice] = "Password or Username is incorrect. Please try Again!."
+      flash[:notice] = "Password or Username is incorrect. Please try Again!"
       redirect_to "/sessions/new"
     end
   end
