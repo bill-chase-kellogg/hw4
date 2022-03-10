@@ -11,17 +11,21 @@
 <div class = "container-fluid">
   <div class ="row">
   <% for post in @place.posts %>
-    <% if post.user_id %>
-      <div class="col-md-3 col-sm-6">  
+
+    <% if post.user_id == @current_user.id %>
+
+        <div class="col-md-3 col-sm-6">  
         <h3><%= post.title %></h3>
         <h4><%= post.posted_on %></h4>
-          <% if post.uploaded_image.attached? %>
-          <img src= "<%= url_for(post.uploaded_image) %>" class="img-fluid">
-          <% else %>
-          <% end %>
+
+            <% if post.uploaded_image.attached? %>
+            <img src= "<%= url_for(post.uploaded_image) %>" class="img-fluid">
+            <% else %>
+            <% end %>
+            
         <p><%= post.description %></p>
+
       <% else %>
-      You Dont't Have Any Posts Here Yet!
       <% end %>     
     </div>
   <% end %>
