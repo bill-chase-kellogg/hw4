@@ -24,4 +24,5 @@ class SessionsController < ApplicationController
     flash[:notice] = "You are now logged out. Goodbye."
     redirect_to "/sessions/new"
   end
+end
   
