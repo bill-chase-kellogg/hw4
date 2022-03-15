@@ -10,11 +10,11 @@ class SessionsController < ApplicationController
         flash[:notice] = "Welcome!"
         redirect_to "/places"
       else
-        flash[:notice] = "Password or Username is incorrect. Please try Again!"
+        flash[:notice] = "Password or Username is incorrect. Please try again!"
         redirect_to "/sessions/new"
       end
     else
-      flash[:notice] = "Password or Username is incorrect. Please try Again!"
+      flash[:notice] = "Password or Username is incorrect. Please try again!"
       redirect_to "/sessions/new"
     end
   end
